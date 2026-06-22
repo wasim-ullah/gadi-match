@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Your Full Match Report — Gadi Match</title>
+<meta name="description" content="Your top 3 actual car matches with AED price ranges and where to find them in the UAE.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="app">
+  <section class="screen active">
+    <div class="result-inner">
+      <p class="result-label">Payment confirmed</p>
+      <div class="wordmark" style="font-size: clamp(1.6rem, 7vw, 2.2rem);">GADI<span class="accent">MATCH</span></div>
+
+      <h2 class="unlocked-title">Your Full Match Report</h2>
+      <p class="result-desc">Your top 3 actual car matches, with AED price ranges and where to find them in the UAE.</p>
+
+      <div id="matches-list" class="matches-list"></div>
+
+      <div class="result-actions">
+        <a href="index.html" class="btn-ghost" style="text-decoration:none; display:inline-block; text-align:center;">Back to Gadi Match</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var key = localStorage.getItem("gadiMatchResultKey");
+  var result = key ? window.GADI_DATA.RESULTS[key] : null;
+  var list = document.getElementById("matches-list");
+
+  if (!result) {
+    list.innerHTML = '<p class="result-desc">We couldn\'t find your quiz result on this device. <a href="index.html" style="color:#f5a623;">Retake the quiz</a> to get your personalized matches.</p>';
+    return;
+  }
+
+  result.matches.forEach(function (match) {
+    var item = document.createElement("div");
+    item.className = "match-item";
+    item.innerHTML =
+      '<div class="match-name">' + match.name + '</div>' +
+      '<div class="match-price">' + match.price + '</div>' +
+      '<div class="match-where">' + match.where + '</div>';
+    list.appendChild(item);
+  });
+})();
+</script>
+</body>
+</html>
