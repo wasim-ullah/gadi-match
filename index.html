@@ -10,12 +10,12 @@
 <meta property="og:title" content="Gadi Match — What does your driving say about you?">
 <meta property="og:description" content="A swipeable personality quiz that matches you to your ideal car archetype. Take it in under a minute.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://gadi.co/og-image.jpg">
-<meta property="og:url" content="https://gadi.co/match">
+<meta property="og:image" content="https://gadi-match.vercel.app/og/default.jpg">
+<meta property="og:url" content="https://gadi-match.vercel.app/index.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Gadi Match — What does your driving say about you?">
 <meta name="twitter:description" content="A swipeable personality quiz that matches you to your ideal car archetype.">
-<meta name="twitter:image" content="https://gadi.co/og-image.jpg">
+<meta name="twitter:image" content="https://gadi-match.vercel.app/og/default.jpg">
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -55,7 +55,18 @@
       <p id="result-desc" class="result-desc"></p>
 
       <div class="result-actions">
-        <button id="share-btn" class="btn-secondary">Download / Share Result Card</button>
+        <button id="share-btn" class="btn-secondary">Save Image</button>
+
+        <div class="share-row">
+          <a id="whatsapp-share" class="share-btn-icon" target="_blank" rel="noopener">WhatsApp</a>
+          <a id="email-share" class="share-btn-icon">Email</a>
+        </div>
+
+        <div class="share-link-row">
+          <input id="share-link-input" class="share-link-input" type="text" readonly>
+          <button id="share-link-copy" class="share-link-copy">Copy</button>
+        </div>
+
         <button id="retake-btn" class="btn-ghost">Retake Quiz</button>
       </div>
 

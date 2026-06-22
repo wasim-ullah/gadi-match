@@ -95,6 +95,10 @@
   var cardStack = document.getElementById("card-stack");
   var retakeBtn = document.getElementById("retake-btn");
   var shareBtn = document.getElementById("share-btn");
+  var whatsappShare = document.getElementById("whatsapp-share");
+  var emailShare = document.getElementById("email-share");
+  var shareLinkInput = document.getElementById("share-link-input");
+  var shareLinkCopy = document.getElementById("share-link-copy");
 
   // ---------- NAVIGATION ----------
 
@@ -209,7 +213,21 @@
     document.getElementById("result-tagline").textContent = result.tagline;
     document.getElementById("result-desc").textContent = result.desc;
 
+    setupShareLinks(result);
+
     showScreen(screenResult);
+  }
+
+  function setupShareLinks(result) {
+    var shareUrl = window.location.origin + "/share/" + result.slug + ".html";
+    var shareText = "I got matched to " + result.name + " (" + result.car + ") on Gadi Match. What's yours?";
+
+    shareLinkInput.value = shareUrl;
+
+    whatsappShare.href = "https://wa.me/?text=" + encodeURIComponent(shareText + " " + shareUrl);
+
+    emailShare.href = "mailto:?subject=" + encodeURIComponent("My Gadi Match result: " + result.name) +
+      "&body=" + encodeURIComponent(shareText + "\n\n" + shareUrl);
   }
 
   // ---------- SHARE / DOWNLOAD ----------
@@ -221,7 +239,7 @@
     shareBtn.textContent = "Rendering...";
 
     html2canvas(card, {
-      backgroundColor: "#1a1a1a",
+      backgroundColor: "#ffffff",
       scale: 2
     }).then(function (canvas) {
       var link = document.createElement("a");
@@ -250,4 +268,19 @@
   });
 
   shareBtn.addEventListener("click", downloadResultCard);
+
+  shareLinkCopy.addEventListener("click", function () {
+    shareLinkInput.select();
+    var originalLabel = shareLinkCopy.textContent;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(shareLinkInput.value).then(function () {
+        shareLinkCopy.textContent = "Copied";
+        setTimeout(function () { shareLinkCopy.textContent = originalLabel; }, 1500);
+      });
+    } else {
+      document.execCommand("copy");
+      shareLinkCopy.textContent = "Copied";
+      setTimeout(function () { shareLinkCopy.textContent = originalLabel; }, 1500);
+    }
+  });
 })();

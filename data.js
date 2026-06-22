@@ -3,6 +3,7 @@ window.GADI_DATA = (function () {
 
   var RESULTS = {
     desert_king: {
+      slug: "desert-king",
       name: "The Desert King",
       car: "Toyota Land Cruiser",
       tagline: "Built for dunes, not driveways.",
@@ -15,6 +16,7 @@ window.GADI_DATA = (function () {
       ]
     },
     weekend_warrior: {
+      slug: "weekend-warrior",
       name: "The Weekend Warrior",
       car: "Ford Raptor",
       tagline: "Monday to Friday: normal. Saturday: send it.",
@@ -27,6 +29,7 @@ window.GADI_DATA = (function () {
       ]
     },
     practical_one: {
+      slug: "practical-one",
       name: "The Practical One",
       car: "Nissan Patrol",
       tagline: "Big enough for the family, tough enough for the desert.",
@@ -39,6 +42,7 @@ window.GADI_DATA = (function () {
       ]
     },
     old_reliable: {
+      slug: "old-reliable",
       name: "The Old Reliable",
       car: "Toyota Camry",
       tagline: "Never the loudest. Always the one that starts.",
@@ -51,6 +55,7 @@ window.GADI_DATA = (function () {
       ]
     },
     smooth_operator: {
+      slug: "smooth-operator",
       name: "The Smooth Operator",
       car: "BMW 5 Series",
       tagline: "Confidence at 120, calm at a red light.",
@@ -63,6 +68,7 @@ window.GADI_DATA = (function () {
       ]
     },
     show_stopper: {
+      slug: "show-stopper",
       name: "The Show Stopper",
       car: "Mercedes G-Wagon",
       tagline: "Subtle was never the plan.",
@@ -75,6 +81,7 @@ window.GADI_DATA = (function () {
       ]
     },
     quiet_flex: {
+      slug: "quiet-flex",
       name: "The Quiet Flex",
       car: "Lexus LX",
       tagline: "Whisper quiet. Impossible to ignore.",
@@ -87,6 +94,7 @@ window.GADI_DATA = (function () {
       ]
     },
     city_hustler: {
+      slug: "city-hustler",
       name: "The City Hustler",
       car: "Honda Civic Type R",
       tagline: "Small footprint. Big appetite for speed.",
@@ -101,14 +109,14 @@ window.GADI_DATA = (function () {
   };
 
   var ICONS = {
-    "rugged": '<svg viewBox="0 0 100 100"><polygon points="50,10 90,35 90,75 50,95 10,75 10,35" fill="none" stroke="#f5a623" stroke-width="5"/><rect x="35" y="40" width="30" height="20" fill="#f5a623"/></svg>',
-    "speed-rugged": '<svg viewBox="0 0 100 100"><polygon points="50,8 92,30 92,70 50,92 8,70 8,30" fill="none" stroke="#f5a623" stroke-width="5"/><path d="M25 55 L45 55 L40 40 L60 40 L55 55 L75 55" fill="none" stroke="#f5a623" stroke-width="5"/></svg>',
-    "practical-rugged": '<svg viewBox="0 0 100 100"><rect x="15" y="25" width="70" height="50" rx="10" fill="none" stroke="#f5a623" stroke-width="5"/><circle cx="35" cy="80" r="8" fill="#f5a623"/><circle cx="65" cy="80" r="8" fill="#f5a623"/></svg>',
-    "practical": '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#f5a623" stroke-width="5"/><circle cx="50" cy="50" r="12" fill="#f5a623"/></svg>',
-    "luxury-speed": '<svg viewBox="0 0 100 100"><polygon points="10,60 30,30 70,30 90,60 70,85 30,85" fill="none" stroke="#f5a623" stroke-width="5"/></svg>',
-    "luxury-rugged": '<svg viewBox="0 0 100 100"><rect x="20" y="20" width="60" height="60" fill="none" stroke="#f5a623" stroke-width="5"/><polygon points="50,30 70,50 50,70 30,50" fill="#f5a623"/></svg>',
-    "luxury-practical": '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" fill="none" stroke="#f5a623" stroke-width="5"/><polygon points="50,22 78,50 50,78 22,50" fill="none" stroke="#f5a623" stroke-width="4"/></svg>',
-    "speed": '<svg viewBox="0 0 100 100"><polygon points="20,80 50,10 80,80 50,60" fill="#f5a623"/></svg>'
+    "rugged": '<svg viewBox="0 0 100 100"><polygon points="50,10 90,35 90,75 50,95 10,75 10,35" fill="none" stroke="#111111" stroke-width="5"/><rect x="35" y="40" width="30" height="20" fill="#111111"/></svg>',
+    "speed-rugged": '<svg viewBox="0 0 100 100"><polygon points="50,8 92,30 92,70 50,92 8,70 8,30" fill="none" stroke="#111111" stroke-width="5"/><path d="M25 55 L45 55 L40 40 L60 40 L55 55 L75 55" fill="none" stroke="#111111" stroke-width="5"/></svg>',
+    "practical-rugged": '<svg viewBox="0 0 100 100"><rect x="15" y="25" width="70" height="50" rx="4" fill="none" stroke="#111111" stroke-width="5"/><circle cx="35" cy="80" r="8" fill="#111111"/><circle cx="65" cy="80" r="8" fill="#111111"/></svg>',
+    "practical": '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#111111" stroke-width="5"/><circle cx="50" cy="50" r="12" fill="#111111"/></svg>',
+    "luxury-speed": '<svg viewBox="0 0 100 100"><polygon points="10,60 30,30 70,30 90,60 70,85 30,85" fill="none" stroke="#111111" stroke-width="5"/></svg>',
+    "luxury-rugged": '<svg viewBox="0 0 100 100"><rect x="20" y="20" width="60" height="60" fill="none" stroke="#111111" stroke-width="5"/><polygon points="50,30 70,50 50,70 30,50" fill="#111111"/></svg>',
+    "luxury-practical": '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" fill="none" stroke="#111111" stroke-width="5"/><polygon points="50,22 78,50 50,78 22,50" fill="none" stroke="#111111" stroke-width="4"/></svg>',
+    "speed": '<svg viewBox="0 0 100 100"><polygon points="20,80 50,10 80,80 50,60" fill="#111111"/></svg>'
   };
 
   return { RESULTS: RESULTS, ICONS: ICONS };
