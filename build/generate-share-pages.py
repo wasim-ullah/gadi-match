@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
 
-SITE_URL = "https://gadi-match.vercel.app"
+SITE_URL = "https://gadi.co"
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "share")
 
 ARCHETYPES = [
